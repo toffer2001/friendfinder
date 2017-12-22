@@ -1,4 +1,4 @@
-var friends = require('../data/friends.js');
+var friendsData = require('../data/friends.js');
 var path = require('path');
 
 module.exports = function (app) {
@@ -15,10 +15,8 @@ module.exports = function (app) {
     // Handles data when users submit form
 
     app.post('/api/friends', function (req, res) {
-        if (friendsData.length < 5) {
             friendsData.push(req.body);
             res.json(true);
-        }
 
     });
 }
