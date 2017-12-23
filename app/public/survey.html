@@ -206,7 +206,7 @@
                 </div>
                 <div class="modal-body">
                     <h2 id="match-name"></h2>
-                    <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+                    <img id="match-img" src="" alt="">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -217,6 +217,7 @@
     </div>
 
     <script type="text/javascript">
+
         // Chosen CSS
         var config = {
             ".chosen-select": {},
@@ -237,6 +238,7 @@
         for (var selector in config) {
             $(selector).chosen(config[selector]);
         }
+
 
         // Capture the form inputs
         $("#submit").on("click", function (event) {
@@ -279,6 +281,8 @@
                         $("#q10").val()
                     ]
                 };
+
+
 
                 // AJAX post the data to the friends API.
                 $.post("/api/friends", userData, function (data) {
